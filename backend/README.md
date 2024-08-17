@@ -37,76 +37,60 @@ The Help Center API is a RESTful service that allows users to manage Help Center
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed on your machine.
+- [Node.js](https://nodejs.org/) installed on your machine.  
 - [MongoDB](https://www.mongodb.com/) installed locally or an account with MongoDB Atlas.
 
 ### Steps
 
 1. **Clone the repository:**
-git clone <repository-url>
+git clone <repository-url>  
 cd help-center-api
 
 2. **Install dependencies:**
 npm install
 
 3. **Set up environment variables:**
-• Create a .env file in the root of the project and add the following:
-    PORT=3000
-    MONGODB_URI=<your-mongodb-connection-string>
-• Replace <your-mongodb-connection-string> with your actual MongoDB connection string.
+Create a .env file in the root of the project and add the following:  
+  PORT=3000  
+  MONGODB_URI=<your-mongodb-connection-string>  
+Replace <your-mongodb-connection-string> with your actual MongoDB connection string.
 
 4. **Run the server:**
-npm start
+npm start  
 The server should start on the port specified in your .env file (default: 3000).
 
-**Usage**
+**Usage** 
 Once the server is running, you can interact with the API using tools like Postman or curl. Below are the available API endpoints.
 
 **API Endpoints**
-Create a Help Card
-Endpoint: POST /api/help-cards
+Create a Help Card<br>
+Endpoint: POST /api/help-cards<br>
 Description: Adds a new help card to the help center.
 Request Body:
-json
-Copy code
 {
-  "title": "Manage Billing",
-  "description": "Change subscriptions and payment details.",
+  "title": "Manage Billing",<br>
+  "description": "Change subscriptions and payment details.",<br>
   "link": "https://example.com/manage-billing"
 }
-Response:
-Success (201): Returns the created help card.
-Failure (500): Returns an error message.
-Get All Help Cards
-Endpoint: GET /api/help-cards
-Description: Retrieves all help cards.
-Response:
-Success (200): Returns an array of help cards.
-Failure (500): Returns an error message.
-Get a Specific Help Card
-Endpoint: GET /api/help-cards/:title
-Description: Retrieves a specific help card by its title.
-Response:
-Success (200): Returns the requested help card.
-Failure (404): Returns an error if the card is not found.
-Failure (500): Returns an error message.
-
-**Project Structure**
-help-center-api/
-│
-├── models/
-│   └── HelpCard.js          # Mongoose schema and model for Help Cards
-│
-├── routes/
-│   └── helpCards.js         # Express routes for Help Cards
-│
-├── .env                     # Environment variables
-├── index.js                 # Entry point of the application
-├── package.json             # Project metadata and dependencies
-└── README.md                # Project documentation
+Response:  
+Success (201): Returns the created help card.  
+Failure (500): Returns an error message.  
+Get All Help Cards  
+Endpoint: GET /api/help-cards  
+Description: Retrieves all help cards.  
+Response:  
+Success (200): Returns an array of help cards.  
+Failure (500): Returns an error message.  
+Get a Specific Help Card  
+Endpoint: GET /api/help-cards/:title  
+Description: Retrieves a specific help card by its title.  
+Response:  
+Success (200): Returns the requested help card.  
+Failure (404): Returns an error if the card is not found.  
+Failure (500): Returns an error message.  
 
 **Error Handling**
-The API handles errors gracefully by returning appropriate HTTP status codes and error messages:
+The API handles errors gracefully by returning appropriate HTTP status codes and error messages:  
 
-404 Not Found: Returned when a specific card is not found by its title.
-500 Internal Server Error: Returned for server-related issues, such as database connection failures or invalid input.
+404 Not Found: Returned when a specific card is not found by its title.  
+500 Internal Server Error: Returned for server-related issues, such as database connection failures or invalid input.  
