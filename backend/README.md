@@ -63,15 +63,15 @@ The server should start on the port specified in your .env file (default: 3000).
 Once the server is running, you can interact with the API using tools like Postman or curl. Below are the available API endpoints.
 
 **API Endpoints**
-Create a Help Card<br>
-Endpoint: POST /api/help-cards<br>
-Description: Adds a new help card to the help center.
-Request Body:
-{
-  "title": "Manage Billing",<br>
-  "description": "Change subscriptions and payment details.",<br>
-  "link": "https://example.com/manage-billing"
-}
+Create a Help Card  
+Endpoint: POST /api/help-cards    
+Description: Adds a new help card to the help center.  
+Request Body: 
+{  
+  "title": "Manage Billing",  
+  "description": "Change subscriptions and payment details.",  
+  "link": "https://example.com/manage-billing"  
+}  
 Response:  
 Success (201): Returns the created help card.  
 Failure (500): Returns an error message.  
