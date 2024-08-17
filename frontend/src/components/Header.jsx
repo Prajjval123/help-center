@@ -1,11 +1,12 @@
 import React from "react";
+import logo from '../assets/abstract.png'
 
 const Header = () => {
   return (
     <header className="bg-black text-white flex justify-between items-center p-4 pl-20 pr-40">
       <div className="flex items-center space-x-2 cursor-pointer">
         <img
-          src="https://via.placeholder.com/24"
+          src={logo}
           alt="Abstract Logo"
           className="h-6 w-6"
         />

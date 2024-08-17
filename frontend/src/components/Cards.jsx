@@ -6,7 +6,7 @@ import { data } from "../constants/data";
 const Cards = () => {
   return (
     <>
-      {data.map(data => <Card title={data.title} description={data.description} />)}
+      {data.map((data, id) => <Card key={id} title={data.title} description={data.description} />)}
     </>
   );
 };

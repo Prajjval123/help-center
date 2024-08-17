@@ -1,32 +1,15 @@
 import React from "react";
-const footerdata = [
-  {
-    section: "Abstract",
-    content: ["Branches"],
-  },
-  {
-    section: "Resources",
-    content: ["Blog", "Help Center", "Release Notes", "Status"],
-  },
-  {
-    section: "Community",
-    content: ["Twitter", "LinkedIn", "Facebook", "Dribbble", "Podcast"],
-  },
-  {
-    section: "Company",
-    content: ["About Us", "Careers", "Legal", "Contact Us"],
-  },
-];
+import { footerdata } from "../constants/footerdata";
 
 const Footer = () => {
   return (
     <footer className="bg-[#272b35] text-white py-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-8 px-8">
-        {footerdata.map((data) => (
-          <div>
+        {footerdata.map((data, id) => (
+          <div key={id}>
             <h3 className="font-semibold mb-4">{data.section}</h3>
             <ul>
-              {data.content.map(list => <li>
+              {data.content.map((list, id) => <li key={id}>
                 <a href="#" className="hover:underline">
                   {list}
                 </a>
